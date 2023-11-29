@@ -1,4 +1,5 @@
 from langchain.chat_models import ChatOpenAI
+from langchain.chat_models import ChatGooglePalm
 from langserve import add_routes
 
 from fastapi import FastAPI
@@ -9,7 +10,7 @@ import os
 
 # Load Env variables
 load_dotenv()
-OPENAI_KEY = os.getenv("OPENAI_API_KEY")
+GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 settings.openai.api_key = os.getenv("OPENAI_API_KEY")
 
 # Prompting 
@@ -19,7 +20,7 @@ from prompt import answer_prompt, query_prompt
 from classifiers import extract_book_and_question
 
 # Define langchain LLM
-llm = ChatOpenAI(model="gpt-3.5-turbo-1106")
+llm = ChatGooglePalm(google_api_key="AIzaSyA0Y9aKTrLiEZZz54V2dNbz_-DSR2q-wZg")
 
 # Define Chain
 chain = query_prompt | extract_book_and_question | answer_prompt | llm

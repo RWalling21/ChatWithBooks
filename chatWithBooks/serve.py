@@ -20,7 +20,7 @@ from prompt import answer_prompt, query_prompt
 from classifiers import extract_book_and_question
 
 # Define langchain LLM
-llm = ChatGooglePalm(google_api_key="AIzaSyA0Y9aKTrLiEZZz54V2dNbz_-DSR2q-wZg")
+llm = ChatGooglePalm()
 
 # Define Chain
 chain = query_prompt | extract_book_and_question | answer_prompt | llm

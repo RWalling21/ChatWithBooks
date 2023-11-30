@@ -12,16 +12,11 @@ Given the Book: {book}, answer the following query:
 
 ----------
 
-Your output must be well-written and directly answer the given question. Do not respond as ChatWithBooks, ONLY answer the question that the user has posed. Keep your response short NO MORE THAN 100 WORDS. DO NOT REPEAT YOURSELF
+Your output must be well-written and directly answer the given question. Do not respond as ChatWithBooks, ONLY answer the question that the user has posed. Keep your response short NO MORE THAN 200 WORDS. DO NOT REPEAT YOURSELF
 """
-
-
 
 # Super basic prompt that holds a query, (necessary to pipe into Marvin)
 QUERY_PROMPT = "{query}"
-
-# 
-
 
 # Create Prompt Templates 
 answer_prompt = PromptTemplate.from_template(ANSWER_PROMPT)

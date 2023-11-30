@@ -1,4 +1,3 @@
-from langchain.chat_models import ChatOpenAI
 from langchain.chat_models import ChatGooglePalm
 from langserve import add_routes
 
